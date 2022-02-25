@@ -1,0 +1,46 @@
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+}
+
+main {
+  grid-area: main;
+  /* background-color: red; */
+  /* overflow: auto; */
+  padding: 15px 10px 15px 10px;
+}
+
+footer {
+  border-top: 1px solid #c7c7cc;
+  grid-area: footer;
+}
+/* #app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+} */

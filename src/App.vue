@@ -1,20 +1,15 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
+import Search from "./components/Search.vue";
 </script>
 
 <template>
-  <h1>Teste</h1>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div class="container">
+    <header>Search Git Users</header>
+    <main>
+      <div><Search /></div>
+    </main>
+    <footer>footer</footer>
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
