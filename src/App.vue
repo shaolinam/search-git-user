@@ -3,12 +3,8 @@ import Search from "./components/Search.vue";
 </script>
 
 <template>
-  <div class="container">
-    <header>Search Git Users</header>
-    <main>
-      <div><Search /></div>
-    </main>
-    <footer>footer</footer>
+  <div class="min-h-screen bg-slate-700 flex items-center justify-center p-4">
+    <Search />
   </div>
 </template>
 

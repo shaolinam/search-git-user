@@ -16,6 +16,13 @@ class ServiceUser {
     });
     return res.data;
   }
+  static async getNameUser(urlProfile: string): Promise<string> {
+    const res2 = await axios({
+      method: "get",
+      url: urlProfile,
+    });
+    return res2.data.name;
+  }
 }
 
 export default ServiceUser;

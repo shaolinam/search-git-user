@@ -18,4 +18,6 @@ export default interface InputUser {
   type: string;
   site_admin: boolean;
   score: number;
+  name: string;
+  email: string;
 }
