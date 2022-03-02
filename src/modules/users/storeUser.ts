@@ -58,6 +58,7 @@ const actions = {
       state.incomplete_results = false;
       state.page = 1;
       state.per_page = 20;
+      state.lastPage = 0;
       state.items = [];
       resolve(true);
     });

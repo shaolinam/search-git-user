@@ -7,16 +7,24 @@
     "build": "vue-tsc --noEmit && vite build",
     "build:docker": "docker build -t shaolinam/dockerize-vuejs-app .",
     "prod": "docker run -it -p 8080:80 --rm --name dockerize-vuejs-app-1 shaolinam/dockerize-vuejs-app",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "dependencies": {
     "axios": "^0.26.0",
     "vue": "^3.2.25"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
     "@types/axios": "^0.14.0",
+    "@types/jest": "^27.4.1",
     "@vitejs/plugin-vue": "^2.2.0",
     "autoprefixer": "^10.4.2",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
     "postcss": "^8.4.7",
     "tailwindcss": "^3.0.23",
     "typescript": "^4.5.4",

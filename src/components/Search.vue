@@ -95,8 +95,15 @@ const placeHolderSearchBy = computed(() => {
 
 <template>
   <div class="w-full bg-slate-800 p-4 flex flex-col text-white rounded altura">
-    <div class="w-full mb-5 text-white font-bold text-2xl">
-      Busca por usuários Github
+    <div
+      class="w-full inline-flex items-center space-x-2 mb-5 text-white font-bold text-2xl"
+    >
+      <p>Busca por usuários Github</p>
+      <img
+        class="h-8 w-8 rounded-full border-2 border-gray-500 hover:scale-125"
+        src="./../assets/img/Octocat.jpg"
+        alt=""
+      />
     </div>
     <div class="w-full flex flex-col">
       <div class="w-full flex flex-row space-x-2 items-center">
