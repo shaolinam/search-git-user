@@ -57,7 +57,6 @@ describe("Buscar Usuário(s) no Github", () => {
       }
     });
   });
-
   describe.only("Buscar usuário(s) com parametro válido", () => {
     const param = "fabio carvalho";
     actionsUser.setSearchInput(param);
@@ -144,6 +143,46 @@ describe("Buscar Usuário(s) no Github", () => {
       } catch (error) {
         expect(error.response.status).toBe(422);
       }
+    });
+  });
+  describe("Status Usuario", () => {
+    it("Deve retornar ao Status inicial ao limpar", () => {
+      const statusInicial = stateUser;
+      actionsUser.clear();
+      expect(stateUser.searchInput).toBe(statusInicial.searchInput);
+      expect(stateUser.loading).toBe(statusInicial.loading);
+      expect(stateUser.runSearch).toBe(statusInicial.runSearch);
+      expect(stateUser.error).toBe(statusInicial.error);
+      expect(stateUser.total_count).toBe(statusInicial.total_count);
+      expect(stateUser.incomplete_results).toBe(
+        statusInicial.incomplete_results
+      );
+      expect(stateUser.page).toBe(statusInicial.page);
+      expect(stateUser.per_page).toBe(statusInicial.per_page);
+      expect(stateUser.lastPage).toBe(statusInicial.lastPage);
+      expect(stateUser.items).toBe(statusInicial.items);
+    });
+  });
+  describe("Setar atributos da Busca", () => {
+    it("Setar status de Error", async () => {
+      const param = "Error teste";
+      const statusRes = await actionsUser.setError(param);
+      expect(stateUser.error).toBe(statusRes);
+    });
+    it("Setar status executou pesquisa", async () => {
+      const param = true;
+      const statusRes = await actionsUser.setRunSearch(param);
+      expect(stateUser.runSearch).toBe(statusRes);
+    });
+    it("Setar status tipo de filtro", async () => {
+      const param = SEARCH_BY_NOME;
+      const statusRes = await actionsUser.setSearchBy(SEARCH_BY_NOME);
+      expect(stateUser.searchBy).toBe(statusRes);
+    });
+    it("Setar status carregamento de dados", async () => {
+      const param = true;
+      const statusRes = await actionsUser.setLoading(param);
+      expect(stateUser.loading).toBe(statusRes);
     });
   });
 });

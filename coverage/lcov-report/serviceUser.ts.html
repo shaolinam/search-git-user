@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.33% </span>
+                <span class="strong">41.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/12</span>
+                <span class='fraction'>5/12</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/6</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.33% </span>
+                <span class="strong">41.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/12</span>
+                <span class='fraction'>5/12</span>
             </div>
         
             
@@ -165,7 +165,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -200,7 +200,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -219,14 +226,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -239,7 +239,7 @@
 import ResponseSearch from "./responseSearch";
 &nbsp;
 class ServiceUser {
-  static async getUserByname(params: {
+  static async getUserByName(params: {
     search: string;
     page: number;
     per_page: number;
@@ -251,7 +251,7 @@ class ServiceUser {
         Accept: "application/vnd.github.v3+json",
       },
     });
-<span class="cstat-no" title="statement not covered" >    return res.data;</span>
+    return res.data;
   }
 <span class="fstat-no" title="function not covered" >  st</span>atic async getUserByFullname(params: {
     search: string;
@@ -281,19 +281,19 @@ class ServiceUser {
     });
 <span class="cstat-no" title="statement not covered" >    return res.data;</span>
   }
-<span class="fstat-no" title="function not covered" >  st</span>atic async getUserByEmail(params: {
+  static async getUserByEmail(params: {
     search: string;
     page: number;
     per_page: number;
   }): Promise&lt;ResponseSearch&gt; {
-    const res = <span class="cstat-no" title="statement not covered" >await axios({</span>
+    const res = await axios({
       method: "get",
       url: `https://api.github.com/search/users?q=${params.search} in:email&amp;type=Users&amp;page=${params.page}&amp;per_page=${params.per_page}`,
       headers: {
         Accept: "application/vnd.github.v3+json",
       },
     });
-<span class="cstat-no" title="statement not covered" >    return res.data;</span>
+    return res.data;
   }
 <span class="fstat-no" title="function not covered" >  st</span>atic async getUserByOrganization(params: {
     search: string;
@@ -309,10 +309,10 @@ class ServiceUser {
     });
 <span class="cstat-no" title="statement not covered" >    return res.data;</span>
   }
-<span class="fstat-no" title="function not covered" >  st</span>atic async getPerfil(
+  static async getPerfil(
     urlProfile: string
   ): Promise&lt;{ name: string; email: string }&gt; {
-    const res2 = <span class="cstat-no" title="statement not covered" >await axios({</span>
+    const res2 = await axios({
       method: "get",
       url: urlProfile,
     });
@@ -328,7 +328,7 @@ export default ServiceUser;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Mar 02 2022 09:48:32 GMT-0400 (Horário Padrão do Amazonas)
+                at Wed Mar 02 2022 13:48:53 GMT-0400 (Horário Padrão do Amazonas)
             </div>
         <script src="prettify.js"></script>
         <script>

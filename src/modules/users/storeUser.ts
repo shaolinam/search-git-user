@@ -78,13 +78,16 @@ const actions = {
   setSearchInput: (value: string): void => {
     state.searchInput = value;
   },
-  setSearchBy: (value: number): void => {
-    state.searchBy = value;
+  setSearchBy: (value: number): Promise<number> => {
+    return new Promise((resolve) => {
+      state.searchBy = value;
+      resolve(state.searchBy);
+    });
   },
-  setLoading: async (value: boolean): Promise<void> => {
-    new Promise((resolve) => {
+  setLoading: async (value: boolean): Promise<boolean> => {
+    return new Promise((resolve) => {
       state.loading = value;
-      resolve(true);
+      resolve(state.loading);
     });
   },
   getPerfil: async (url: string): Promise<{ name: string; email: string }> => {
@@ -114,7 +117,7 @@ const actions = {
     let res: ResponseSearch;
     switch (state.searchBy) {
       case 1:
-        res = await ServiceUser.getUserByname(input);
+        res = await ServiceUser.getUserByName(input);
         break;
 
       case 2:
@@ -134,7 +137,7 @@ const actions = {
         break;
 
       default:
-        res = await ServiceUser.getUserByname(input);
+        res = await ServiceUser.getUserByName(input);
         break;
     }
     state.total_count = res.total_count;

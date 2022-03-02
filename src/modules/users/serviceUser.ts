@@ -2,7 +2,7 @@ import axios from "axios";
 import ResponseSearch from "./responseSearch";
 
 class ServiceUser {
-  static async getUserByname(params: {
+  static async getUserByName(params: {
     search: string;
     page: number;
     per_page: number;

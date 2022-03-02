@@ -9,7 +9,8 @@
     "prod": "docker run -it -p 8080:80 --rm --name dockerize-vuejs-app-1 shaolinam/dockerize-vuejs-app",
     "preview": "vite preview",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "axios": "^0.26.0",
