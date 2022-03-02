@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import {
   getters as gettersUser,
   actions as actionsUser,
@@ -13,8 +13,12 @@ const setPage = async (value: number) => {
     await actionsUser.setSelectedPage(value);
     await actionsUser.SearchUsers();
   } catch (error: any) {
-    console.log(error);
     await actionsUser.setError(error.message);
+    await new Promise((resolve) => {
+      error.value = error.message;
+      console.log(error.message);
+      resolve(true);
+    });
   } finally {
     await actionsUser.setLoading(false);
   }
